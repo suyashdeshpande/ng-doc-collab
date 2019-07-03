@@ -1,0 +1,17 @@
+<div class="container">
+  <ng-template [ngIf]="document.id" [ngIfElse]="noDocuments">
+    <mat-form-field appearance="outline">
+      <textarea matInput cdkTextareaAutosize
+                cdkAutosizeMinRows="10"
+                cdkAutosizeMaxRows="20"
+                [(ngModel)]="document.doc"
+                (keyup)="editDoc()"
+                placeholder="Write Here"></textarea>
+    </mat-form-field>
+  </ng-template>
+  <ng-template #noDocuments>
+    <p>
+      No documents. Please add a document
+    </p>
+  </ng-template>
+</div>

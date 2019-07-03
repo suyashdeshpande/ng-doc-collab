@@ -1,0 +1,10 @@
+<div class="container">
+  <button mat-button color="primary" (click)='newDoc()'>New Document</button>
+  <!--  <span [class.selected]='docId === currentDoc' (click)='loadDoc(docId)'-->
+  <!--        *ngFor='let docId of documents | async'>{{ docId }}</span>-->
+
+  <mat-action-list>
+    <button [class.selected]="docId === currentDoc" mat-list-item (click)="loadDoc(docId)"
+            *ngFor="let docId of documents | async">{{docId}}</button>
+  </mat-action-list>
+</div>

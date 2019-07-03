@@ -1,0 +1,18 @@
+<mat-toolbar class="header">ng-doc-collab</mat-toolbar>
+<div class="container">
+  <button *ngIf="mobileView && !sidenav.opened"
+          style="z-index: 5"
+          mat-icon-button
+          aria-label="Open sidenav"
+          (click)="sidenav.open()">
+    <i class="material-icons">menu</i>
+  </button>
+  <mat-sidenav-container class="example-container" [hasBackdrop]="mobileView">
+    <mat-sidenav #sidenav [mode]="mobileView ? 'over' : 'side'" [opened]="!mobileView">
+      <app-document-list></app-document-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-document></app-document>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
